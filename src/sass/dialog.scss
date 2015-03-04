@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Dialog
+   ========================================================================== */
+
+$width: 620px;
+$responsiveWidth: (767px / 16px) * 1em;
+
+.dlg {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  z-index: 999;
+  width: $width;
+  margin: 0 auto;
+  margin-left: -($width / 2);
+  display: none;
+
+  background-color: #fff;
+
+  &.is-loading .dlg--header,
+  &.is-loading .dlg--footer,
+  &.is-loading .dlg--close {
+    display: none;
+  }
+}
+
+.dlg--overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  display: block;
+
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.dlg--close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 23px;
+}
+
+@media only screen and (max-width: $responsiveWidth) {
+  .dlg {
+    width: 80%;
+    left: 10%;
+    top: 25px;
+    margin-left: 0;
+  }
+}
+
+.dlg.is-hidden {
+  display: none;
+}
+
+.dlg.is-shown {
+  display: block;
+}
