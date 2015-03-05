@@ -1,6 +1,6 @@
 var paths = {
-  scripts: ['src/javascripts/dialog.overlay.js',
-            'src/javascripts/dialog.js'],
+  scripts: ['src/javascripts/flex.dialog.overlay.js',
+            'src/javascripts/flex.dialog.js'],
   styles:  ['src/sass/*.scss']
 };
 
@@ -13,12 +13,12 @@ var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('build', function () {
   gulp.src(paths.scripts)
-    .pipe(concat('dialog.js'))
+    .pipe(concat('flex.dialog.js'))
     .pipe(gulp.dest('lib'));
 });
 
 gulp.task('compress', function() {
-  gulp.src('lib/dialog.js')
+  gulp.src('lib/flex.dialog.js')
     .pipe(uglify())
     .pipe(rename({
       extname: '.min.js'

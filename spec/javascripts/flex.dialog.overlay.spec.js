@@ -8,7 +8,7 @@ describe('Overlay', function () {
 
   beforeEach(function () {
     options = { overlayClass: 'js-overlay' };
-    overlay = Dialog.Overlay(options);
+    overlay = Flex.Dialog.Overlay(options);
   });
 
   describe("#show", function () {
@@ -21,7 +21,7 @@ describe('Overlay', function () {
 
   describe("#close", function () {
     it('removes the html markup from body', function () {
-      var optionsoverlay = Dialog.Overlay(options);
+      var optionsoverlay = Flex.Dialog.Overlay(options);
 
       overlay.show();
       overlay.close();

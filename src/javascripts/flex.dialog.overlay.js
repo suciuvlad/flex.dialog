@@ -12,7 +12,9 @@
 
   'use strict';
 
-  var Dialog = window.Dialog = {};
+  window.Flex = window.Flex || {};
+
+  var Dialog = window.Flex.Dialog = {};
 
   Dialog.Overlay = (function (options) {
     var emitter = new Emitter();
