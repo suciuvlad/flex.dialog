@@ -1,0 +1,49 @@
+.dlg {
+  border: 1px solid #acacac;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+
+  &.is-loading .dlg--header,
+  &.is-loading .dlg--footer,
+  &.is-loading .dlg--close {
+    display: none;
+  }
+
+  border-radius: 3px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.dlg--overlay {
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.dlg--close {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  font-size: 23px;
+  color: #acacac;
+  font-weight: bold;
+
+  &:hover {
+    color: darken(#acacac, 50%);
+  }
+}
+
+a.dlg--close {
+  text-decoration: none;
+}
+
+.dlg--header {
+  padding: 15px 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.dlg--body {
+  padding: 15px 15px;
+}
+
+.dlg--footer {
+  padding: 15px 15px;
+  border-top: 1px solid #e5e5e5;
+}

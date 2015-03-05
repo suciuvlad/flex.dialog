@@ -1,7 +1,7 @@
 var paths = {
   scripts: ['src/javascripts/dialog.overlay.js',
             'src/javascripts/dialog.js'],
-  styles:  ['src/sass/*.scss'],
+  styles:  ['src/sass/*.scss']
 };
 
 var gulp = require('gulp');
@@ -9,6 +9,7 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('build', function () {
   gulp.src(paths.scripts)
@@ -28,8 +29,11 @@ gulp.task('compress', function() {
 
 gulp.task('styles', function () {
   return gulp.src(paths.styles)
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(sass({ outputStyle: 'compressed' }))
-    .pipe(concat('dialog.css'))
     .pipe(gulp.dest('lib'));
 });
 

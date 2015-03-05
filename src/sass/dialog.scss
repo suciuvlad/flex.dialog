@@ -6,8 +6,8 @@ $width: 620px;
 $responsiveWidth: (767px / 16px) * 1em;
 
 .dlg {
-  position: fixed;
-  top: 50px;
+  position: absolute;
+  top: 0;
   left: 50%;
   z-index: 999;
   width: $width;
@@ -16,12 +16,6 @@ $responsiveWidth: (767px / 16px) * 1em;
   display: none;
 
   background-color: #fff;
-
-  &.is-loading .dlg--header,
-  &.is-loading .dlg--footer,
-  &.is-loading .dlg--close {
-    display: none;
-  }
 }
 
 .dlg--overlay {
@@ -34,13 +28,6 @@ $responsiveWidth: (767px / 16px) * 1em;
   display: block;
 
   background-color: rgba(0, 0, 0, .4);
-}
-
-.dlg--close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 23px;
 }
 
 @media only screen and (max-width: $responsiveWidth) {
