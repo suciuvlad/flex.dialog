@@ -1,8 +1,9 @@
 {
   "name": "flex.dialog",
+  "title": "flex.dialog",
   "version": "0.1.0",
   "description": "A basic jQuery dependent modal dialog.",
-  "main": "lib/flex.dialog.js",
+  "main": "dist/flex.dialog.js",
   "homepage": "http://github.com/suciuvlad/flex.dialog/",
   "dependencies": {
     "jquery": "^2.1.3",
