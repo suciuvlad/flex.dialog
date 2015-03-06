@@ -14,10 +14,11 @@
   }(function($, Emitter) {
     //= include flex.dialog.js
     //= include flex.dialog.overlay.js
+
+    return Dialog;
   }));
 
   window.Flex = window.Flex || {};
   window.Flex.Dialog = Dialog;
 
-  return Dialog;
 }());
