@@ -1,6 +1,5 @@
 var paths = {
-  scripts: ['src/javascripts/flex.dialog.overlay.js',
-            'src/javascripts/flex.dialog.js'],
+  scripts: ['src/javascripts/main.js'],
   styles:  ['src/sass/*.scss']
 };
 
@@ -10,10 +9,12 @@ var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var autoprefixer = require('gulp-autoprefixer');
+var include = require('gulp-include');
 
 gulp.task('build', function () {
   gulp.src(paths.scripts)
     .pipe(concat('flex.dialog.js'))
+    .pipe(include())
     .pipe(gulp.dest('lib'));
 });
 

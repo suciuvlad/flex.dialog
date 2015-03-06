@@ -13,8 +13,7 @@
 src_files:
   - node_modules/jquery/dist/jquery.js
   - node_modules/wolfy87-eventemitter/EventEmitter.js
-  - src/javascripts/flex.dialog.overlay.js
-  - src/javascripts/flex.dialog.js
+  - lib/flex.dialog.js
 
 # stylesheets
 #
