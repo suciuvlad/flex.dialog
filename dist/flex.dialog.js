@@ -149,10 +149,11 @@
     });
     
 
+
+    return Dialog;
   }));
 
   window.Flex = window.Flex || {};
   window.Flex.Dialog = Dialog;
 
-  return Dialog;
 }());
