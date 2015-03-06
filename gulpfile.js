@@ -15,16 +15,16 @@ gulp.task('build', function () {
   gulp.src(paths.scripts)
     .pipe(concat('flex.dialog.js'))
     .pipe(include())
-    .pipe(gulp.dest('lib'));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('compress', function() {
-  gulp.src('lib/flex.dialog.js')
+  gulp.src('dist/flex.dialog.js')
     .pipe(uglify())
     .pipe(rename({
       extname: '.min.js'
     }))
-    .pipe(gulp.dest('lib'))
+    .pipe(gulp.dest('dist'))
 });
 
 
@@ -35,7 +35,7 @@ gulp.task('styles', function () {
       cascade: false
     }))
     .pipe(sass({ outputStyle: 'compressed' }))
-    .pipe(gulp.dest('lib'));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('default',['build', 'compress', 'styles']);
