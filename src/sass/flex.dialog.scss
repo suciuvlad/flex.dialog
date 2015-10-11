@@ -2,17 +2,17 @@
    Dialog
    ========================================================================== */
 
-$width: 620px;
-$responsiveWidth: (767px / 16px) * 1em;
+$dialogWidth: 620px !important;
+$dialogResponsiveWidth: (767px / 16px) * 1em !important;
 
 .dlg {
   position: absolute;
   top: 0;
   left: 50%;
   z-index: 999;
-  width: $width;
+  width: $dialogWidth;
   margin: 0 auto;
-  margin-left: -($width / 2);
+  margin-left: -($dialogWidth / 2);
   display: none;
 
   background-color: #fff;
@@ -30,7 +30,7 @@ $responsiveWidth: (767px / 16px) * 1em;
   background-color: rgba(0, 0, 0, .4);
 }
 
-@media only screen and (max-width: $responsiveWidth) {
+@media only screen and (max-width: $dialogResponsiveWidth) {
   .dlg {
     width: 80%;
     left: 10%;
