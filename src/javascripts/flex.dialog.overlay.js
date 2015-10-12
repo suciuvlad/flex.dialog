@@ -25,6 +25,10 @@ Dialog.Overlay = (function (options) {
 
     on: function (event, callback) {
       emitter.on(event, callback);
+    },
+
+    off: function (event, callback) {
+      emitter.off(event, callback);
     }
   };
 });

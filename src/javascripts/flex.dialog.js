@@ -1,4 +1,5 @@
 var buildConfig,
+  keyupFunc,
   defaults;
 
 defaults = {
@@ -51,19 +52,35 @@ Dialog.prototype._setupBindings = function () {
   var self = this;
 
   if (this.options.evtCloseOnESC) {
-    $('body').keyup(function (e) {
-      if (e.which === 27) {
-        self.close();
-      }
-    });
+    $('body').keyup(keyup);
   }
 
   this.$elem.on('click', '[data-dialog="dismiss"]', $.proxy(this.close, this));
   this.config.overlay.on('event:overlay:clicked', $.proxy(this.close, this));
 };
 
+Dialog.prototype._destroyBindings = function () {
+  $('body').unbind('keyup', keyup);
+  this.$elem.off('click', '[data-dialog="dismiss"]', $.proxy(this.close, this));
+  this.config.overlay.off('event:overlay:clicked', $.proxy(this.close, this));
+};
+
+Dialog.prototype.destroy = function () {
+  this.close();
+  this._destroyBindings();
+  this.$elem.removeData();
+};
+
 Dialog.prototype.defaults = defaults;
 Emitter(Dialog.prototype);
+
+keyup = function () {
+  $('body').keyup(function (e) {
+    if (e.which === 27) {
+      self.close();
+    }
+  });
+};
 
 buildConfig = function (options) {
   var config = {};
