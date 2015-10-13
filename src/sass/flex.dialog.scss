@@ -3,16 +3,15 @@
    ========================================================================== */
 
 $dialogWidth: 620px;
-$dialogResponsiveWidth: (767px / 16px) * 1em;
 
 .dlg {
   position: absolute;
   top: 0;
   left: 50%;
   z-index: 999;
-  width: $dialogWidth !important;
+  width: $dialogWidth;
   margin: 0 auto;
-  margin-left: -($dialogWidth / 2) !important;
+  margin-left: -($dialogWidth / 2);
   display: none;
 
   background-color: #fff;
@@ -28,15 +27,6 @@ $dialogResponsiveWidth: (767px / 16px) * 1em;
   display: block;
 
   background-color: rgba(0, 0, 0, .4);
-}
-
-@media only screen and (max-width: $dialogResponsiveWidth) {
-  .dlg {
-    width: 80%;
-    left: 10%;
-    top: 25px;
-    margin-left: 0;
-  }
 }
 
 .dlg.is-hidden {
