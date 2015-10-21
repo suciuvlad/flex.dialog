@@ -77,11 +77,13 @@
       $('body').unbind('keyup', keyup);
       this.$elem.off('click', '[data-dialog="dismiss"]', $.proxy(this.close, this));
       this.config.overlay.off('event:overlay:clicked', $.proxy(this.close, this));
+      this.options.onShow = function () {};
+      this.options.onClose = function () {};
     };
     
     Dialog.prototype.destroy = function () {
-      this.close();
       this._destroyBindings();
+      this.close();
       this.$elem.removeData();
     };
     
